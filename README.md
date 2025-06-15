@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# The Founder's Playbook - Backbone Project
+
+> A professional boilerplate for rapidly launching new MVPs, built with Next.js, Tailwind CSS, and `shadcn/ui`.
+
+---
+
+## Overview
+
+This project is a modern, professional starter kit that operationalizes the **Founder's Playbook** methodology. It leverages an automated setup via `shadcn/ui` to ensure a robust, scalable, and maintainable foundation, allowing for rapid feature development.
+
+## Tech Stack
+
+- **Framework:** Next.js (with App Router)
+- **Styling:** Tailwind CSS with a pre-configured design system via `shadcn/ui`.
+- **UI Architecture:** "Lean UI Foundation" (`cva` for variants, atomic folder structure).
+- **Database & Auth:** Supabase (Postgres, Auth via `@supabase/ssr`)
+- **Deployment:** Vercel
 
 ## Getting Started
 
-First, run the development server:
+Follow these instructions to get a copy of the project running on your local machine for development and testing purposes.
+
+### 1. Prerequisites
+
+- Node.js (v20 or later)
+- PNPM package manager (`npm install -g pnpm`)
+- A Supabase account and project for database and authentication.
+
+### 2. Installation & Setup
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/](https://github.com/)[YOUR_GITHUB_USERNAME]/playbook-app.git
+    ```
+
+2.  **Navigate into the project directory:**
+    ```bash
+    cd playbook-app
+    ```
+
+3.  **Install dependencies:**
+    ```bash
+    pnpm install
+    ```
+
+4.  **Set up environment variables:**
+    - Create a local environment file by copying the example:
+      ```bash
+      cp .env.example .env.local
+      ```
+    - Open the new `.env.local` file. You will need to populate it with your own secret keys from your Supabase project dashboard (and any other services like Stripe or PostHog). The `.env.example` file lists all required keys.
+
+### 3. Running the Development Server
+
+Once setup is complete, you can run the application:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
