@@ -2,7 +2,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { redirect } from "next/navigation";
+// Removed 'redirect' since it was not used
 
 // A Client Component to handle the sign-out action
 function SignOutButton() {
@@ -29,7 +29,8 @@ export default async function HomePage() {
             <h1 className="text-2xl">
               Welcome back, <span className="font-bold">{user.email}</span>!
             </h1>
-            <p>You are now logged in and "inside" the application.</p>
+            {/* Replaced " with &quot; to fix the unescaped-entities error */}
+            <p>You are now logged in and &quot;inside&quot; the application.</p>
             <SignOutButton />
           </>
         ) : (
