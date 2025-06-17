@@ -4,6 +4,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
+import { toast } from 'sonner'; // <-- 1. Import toast from sonner
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -15,15 +16,14 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { useToast } from "@/components/ui/use-toast"
-import { Toaster } from "@/components/ui/toaster"
+import { Toaster } from '@/components/ui/sonner'; // <-- 2. Import Toaster from sonner
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const router = useRouter();
   const supabase = createClient();
-  const { toast } = useToast();
+  // We no longer need the useToast hook!
 
   const handleLogin = async () => {
     const { error } = await supabase.auth.signInWithPassword({
@@ -33,19 +33,15 @@ export default function LoginPage() {
 
     if (error) {
       console.error('Error logging in:', error.message);
-      toast({
-        title: "Login Failed",
+      // 3. Use the new sonner toast function
+      toast.error('Login Failed', {
         description: error.message,
-        variant: "destructive",
-      })
+      });
     } else {
-      toast({
-        title: "Success!",
-        description: "You are now logged in.",
-      })
-      // On successful login, redirect to the home page.
-      // The page will reload, and the server component will
-      // detect the new session.
+      // 4. Use the new sonner toast function for success
+      toast.success('Success!', {
+        description: 'You are now logged in.',
+      });
       router.push('/');
       router.refresh();
     }
@@ -85,7 +81,8 @@ export default function LoginPage() {
           </Button>
         </CardContent>
       </Card>
-      <Toaster />
+      {/* 5. The Sonner Toaster component, richColors gives nice styling */}
+      <Toaster richColors />
     </div>
   );
 }
