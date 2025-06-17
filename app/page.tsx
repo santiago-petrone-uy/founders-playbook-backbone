@@ -47,14 +47,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
 import { Progress } from "@/components/ui/progress"
 import {
@@ -103,7 +95,7 @@ export default function ComponentCatalog() {
       <header className="text-center space-y-2">
         <h1 className="text-5xl font-bold tracking-tighter">Component Catalog</h1>
         <p className="text-muted-foreground text-xl">
-          A visual inventory of all UI components in the Founder's Playbook Backbone.
+          A visual inventory of all UI components in the Founder&apos;s Playbook Backbone.
         </p>
       </header>
 
